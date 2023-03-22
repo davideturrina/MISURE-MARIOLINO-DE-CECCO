@@ -1,8 +1,8 @@
 
 % Lamiera 1:
 
-im = imread('\Users\davide\Desktop\misure meccaniche e  termiche\laboratorio\Ritagliati Matteo\Ritagliati Matteo\Plate1Picture.jpeg');
-imdata = imread('\Users\davide\Desktop\misure meccaniche e  termiche\laboratorio\Ritagliati Matteo\Ritagliati Matteo\ZImagePlate1.tif');
+im = imread('Plate1Picture.jpeg');
+imdata = imread('ZImagePlate1.tif');
 imdata = imdata(:, 300:end);
 
 figure(1), imagesc(im);
