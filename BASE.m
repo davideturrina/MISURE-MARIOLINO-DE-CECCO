@@ -36,7 +36,7 @@
 close all
 clear
 
-% ,
+% ,,,
 % Lamiera 1:
 
 im = imread('Plate1Picture.jpeg');
