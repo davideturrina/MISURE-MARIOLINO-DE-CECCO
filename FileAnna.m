@@ -11,8 +11,8 @@ clear
 % NOTA: inserire i percorsi corretti su vostro PC
 
 % Lamiera 1:
-im = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\Plate1Picture.jpeg');
-imdata = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\ZImagePlate1.tif');
+im = imread('Plate1Picture.jpeg');
+imdata = imread('ZImagePlate1.tif');
 imdata = imdata(:, 300:end);
 
 % Lamiera 2:
@@ -53,7 +53,7 @@ for i = 1:1:size(imdata,1)
     % estrarre le righe ed effettuare la rimozione outlier:
     scansione = imdata(i,:);
     scansione = double(scansione) * 1000; % to double [mm] for filtering
-
+        
     % Rimozione Outlier viene fatta qui:
     % DA FARE: usare il comando "hampel"
     scansione = hampel(scansione, 20);
