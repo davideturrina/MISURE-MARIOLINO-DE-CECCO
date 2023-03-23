@@ -1,3 +1,41 @@
+%% STEP 1: Lettura dati
+% NOTA: 
+
+% - nel file "*.jpeg" c'è una foto scattata con smartphone
+% - nel file "*.tif" i dati misurati con laser a triangolazione
+% in forma di una immagine con valori di ciascun pixel pari 
+% alle quote lungo la verticale misurate mediante laser
+
+% NOTA: inserire i percorsi corretti su vostro PC ---> mettete tutto nella
+% cartella del progetto, dovete solo richiamare il nome del file (guardate
+% come è stato fatto per la lamiera 1"
+
+% ricordate di fare tutte le operazioni di push e pull una volta finite le
+% modifiche.
+
+% Lamiera 2:
+%im = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/Plate2Picture.jpeg');
+%imdata = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/ZImagePlate2.tif');
+%imdata = imdata(:, 550:end);
+
+% Lamiera 3:
+% im = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/Plate3Picture.jpeg');
+% imdata = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/ZImagePlate3.tif');
+% imdata = imdata(:, 220:(end-200));
+
+% Lamiera 4:
+% im = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/Plate4Picture.jpeg');
+% imdata = imread('/Users/mariolinodececco/Documents/Backup Mario - Gennaio 2021/Progetti Industriali/1 Rocitoo - Automazione/Linee industriali/Visione/BM/Misura difetti Lastre di metallo/Dati/Ritagliati Matteo/ZImagePlate4.tif');
+
+% NOTA: 
+% - nella matrice "im" c'è la foto scattata con smartphone
+% - nella matrice "imdata" ci sono i dati misurati con laser a 
+% triangolazione lungo la verticale
+
+
+close all
+clear
+
 
 % Lamiera 1:
 
@@ -54,7 +92,7 @@ end
 ylim([-4 4]), grid on
 
 % Detrend   
-ImmagineZ = detrend(ImmagineZ,1, 1500);
+ImmagineZ = detrend(ImmagineZ,1, 500);
 figure(313), imagesc(ImmagineZ);
 
 % Togliamo la mediana (meno affetta da outlier
