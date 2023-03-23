@@ -92,7 +92,7 @@ end
 ylim([-4 4]), grid on
 
 % Detrend   
-ImmagineZ = detrend(ImmagineZ,1, 500);
+ImmagineZ = detrend(ImmagineZ,1, 1500);
 figure(313), imagesc(ImmagineZ);
 
 % Togliamo la mediana (meno affetta da outlier
@@ -111,6 +111,47 @@ ylim([-4 4]), grid on
 % usare ad esempio il comando "mesh"
 
 figure(34), mesh(ImmagineZ)
+
+
+
+
+%% STEP 4: Calcola descrittori statistici a blocchi NxN:
+N = 150; % sottomatrici NxN
+ss = size(ImmagineZ); % in ss ci sono #righe e #colonne
+rr = floor(ss(1)/N);  % in rr ci saranno quante sottomatrici x riga
+cc = floor(ss(2)/N);  % in cc ci saranno quante sottomatrici x colonna
+ImmagineZ = ImmagineZ(1:rr*N, 1:cc*N);
+
+% creaimo una matrice con #righe = rr e #colonne = cc
+% ripetuta 4 volte nella terza dimensione
+% per immagazzinare i 4 indicatori in 4 matrici corrispondenti:
+% 1. fitting con gaussiana corrispondente
+% 2. ShapeFactor
+% 3. Kurtosis
+% 4. Skew Factor
+DS = zeros(rr, cc, 4);
+for r = 0:rr-1
+    for c = 0:cc-1
+        % Estraiamo la sottomatrice NxN:
+        ImZ = ImmagineZ(1 + r*N : (r+1)*N, ...
+            1 + c*N : (c+1)*N);
+        
+        % DA FARE: applicare detrend a ciascuna 
+        % sottomatrice nel caso in cui non sia stato fatto
+        % per l'intero set di dati
+               
+        DS(r+1,c+1, 1) = pdf;
+        DS(r+1,c+1, 2) = snr;
+        DS(r+1,c+1, 3) = kurtosis;
+        DS(r+1,c+1, 4) = skewness;
+    
+     [pdf, snr, kurtosis, skewness] =...
+         GaussFIT(ImZ, 0);
+    
+    end
+end
+figure(4), imagesc(ImmagineZ);
+
 
 
 
