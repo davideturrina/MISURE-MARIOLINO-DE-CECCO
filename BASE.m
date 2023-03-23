@@ -71,6 +71,7 @@ ylim([-4 4]), grid on
 % DA FARE: provare a plottare le nuvole di punti in 3D
 % in modo da apprezzare l'effetto del detrend su grafico 3D
 % usare ad esempio il comando "mesh"
+
 figure(34), mesh(ImmagineZ)
 
 
