@@ -152,6 +152,7 @@ for r = 0:rr-1
 end
 figure(4), imagesc(ImmagineZ);
 
+%come schiacchia riccardino
 
 
 
