@@ -5,7 +5,7 @@ clear
 % NOTA: ,,,
 % - nel file "*.jpeg" c'è una foto scattata con smartphone
 % - nel file "*.tif" i dati misurati con laser a triangolazione
-% in forma di una immagine con valori di ciascun pixel pari 
+% in forma di una immagine con valori di ciascun pixel pari u7j7j7
 % alle quote lungo la verticale misurate mediante laser
 
 % NOTA: inserire i percorsi corretti su vostro PC
