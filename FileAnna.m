@@ -115,7 +115,7 @@ ImmagineZ = ImmagineZ';
 
 GtestR = zeros(size(imdata,2), 4);
 for i = 1:1:size(ImmagineZ, 2)
-    Column = detrend(ImmagineZ(:,i));
+    Column = detrend(ImmagineZ(:,i),3);
     [GaussPDFMatch, ShapeFactor, Kur, Skew] = ...
         GaussFIT(Column, 0);
     GtestR(i,1) = GaussPDFMatch;
