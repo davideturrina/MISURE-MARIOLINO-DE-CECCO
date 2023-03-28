@@ -11,14 +11,14 @@ clear
 % NOTA: inserire i percorsi corretti su vostro PC
 
 % Lamiera 1:
-im = imread('Plate1Picture.jpeg');
-imdata = imread('ZImagePlate1.tif');
-imdata = imdata(:, 300:end);
+%im = imread('Plate1Picture.jpeg');
+%imdata = imread('ZImagePlate1.tif');
+%imdata = imdata(:, 300:end);
 
 % Lamiera 2:
-% im = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\Plate2Picture.jpeg');
-% imdata = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\ZImagePlate2.tif');
-% imdata = imdata(:, 550:end);
+im = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\Plate2Picture.jpeg');
+imdata = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\ZImagePlate2.tif');
+imdata = imdata(:, 550:end);
 
 % Lamiera 3:
 % im = imread('C:\Users\annap\Desktop\università\III anno\misure\lamiere\immagini\Plate3Picture.jpeg');
