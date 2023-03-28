@@ -92,7 +92,7 @@ end
 ylim([-4 4]), grid on
 
 % Detrend   
-ImmagineZ = detrend(ImmagineZ,1, 1500);
+ImmagineZ = CustomDetrend(ImmagineZ, 1500);
 figure(313), imagesc(ImmagineZ);
 
 % Togliamo la mediana (meno affetta da outlier
