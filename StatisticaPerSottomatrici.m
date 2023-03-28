@@ -51,11 +51,11 @@ for i = 1:1:size(imdata,1)
 
     % Rimozione Outlier viene fatta qui:
     % DA FARE: usare il comando "hampel"
-    scansione = ...;
+    scansione = hampel(scansione,20);
     scansione = scansione - mean(scansione);
     
     % DA FARE: assegniamo alla riga della nuova matrice "ImmagineZ"
-    ...
+    ImmagineZ(i,:)=scansione;
 end
 
 % Convertiamo in [mm]
