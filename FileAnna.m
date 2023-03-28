@@ -91,7 +91,7 @@ for i = 1:1:size(ImmagineZ, 2)
     
     % DA FARE: completare la funzione GaussFIT 
     [GaussPDFMatch, ShapeFactor, Kur, Skew] = ...
-        GaussFIT(Column, 1);
+        GaussFIT(Column, 0);
     GtestC(i,1) = GaussPDFMatch;
     GtestC(i,2) = ShapeFactor;
     GtestC(i,3) = Kur;
