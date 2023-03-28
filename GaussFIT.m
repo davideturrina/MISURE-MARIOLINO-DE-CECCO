@@ -66,7 +66,7 @@ end
 
 % Fitting Gaussiana
 % DA FARE: calcolare gli errori quadratici medi tra le due PDF:
-GaussPDFMatch = ...;
+GaussPDFMatch = immse(Hv,HNormalv);
 
 % Shape Factor:
 ShapeFactor = s / mean(abs(scan));
@@ -74,12 +74,12 @@ ShapeFactor = s / mean(abs(scan));
 % Kurtosis 
 % (The kurtosis has a value of 3 for a normal distribution)
 % DA FARE: calcolare la kurtosis dei dati "scan":
-Kur = ...;
+Kur = kurtosis(scan);
 
 % Skewness or degree of asymmetry:
 % (The skewness has a value of 0 for a normal distribution)
 % DA FARE: calcolare lo Skew factor dei dati "scan":
-Skew = ...;
+Skew = skewness(scan);
 
 
     
